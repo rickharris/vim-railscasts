@@ -1,17 +1,17 @@
-" blackboard color scheme
+" railscasts color scheme
 
 
 " ********************************************************************************
 " The following are the preferred 16 colors for your terminal
 "           Colors      Bright Colors
-" Black     #0C1021     #14192A
-" Red       #9D1E15     #AB2A1D
-" Green     #61CE3C     #6DEB42
-" Yellow    #FBDE2D     #D8FA3C
-" Blue      #8DA6CE     #253B76
-" Magenta   #FF6400     #FF9332
-" Cyan      #B9B4FD     #AEAEAE
-" White     #F2F2F2     #FFFFFF
+" Black     #202020     #292929
+" Red       #C72D2D     #B86329
+" Green     #87B047     #519F50
+" Yellow    #FFBE53     #BC9458
+" Blue      #5883A0     #2C313F
+" Magenta   #CC59B2     #606060
+" Cyan      #ABA8E2     #D5D4FF
+" White     #DAD4D2     #FFFFFF
 " ********************************************************************************
 "
 set background=dark
@@ -21,7 +21,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "blackboard"
+let colors_name = "railscasts"
 
 " General colors
 hi Normal               ctermfg=7           ctermbg=0           cterm=NONE
@@ -35,8 +35,8 @@ hi StatusLineNC         ctermfg=13          ctermbg=8           cterm=NONE
 
 hi Folded               ctermfg=13          ctermbg=NONE        cterm=NONE
 hi Title                ctermfg=NONE        ctermbg=NONE        cterm=NONE
-hi Visual               ctermfg=NONE        ctermbg=8           cterm=NONE
-hi VisualNOS            ctermfg=16          ctermbg=8           cterm=NONE
+hi Visual               ctermfg=NONE        ctermbg=12          cterm=NONE
+hi VisualNOS            ctermfg=16          ctermbg=12          cterm=NONE
 
 hi SpecialKey           ctermfg=NONE        ctermbg=NONE        cterm=NONE
 
@@ -58,7 +58,7 @@ if version >= 700 " Vim 7.x specific colors
   hi TabLine            ctermfg=13          ctermbg=NONE        cterm=NONE
   hi TabLineFill        ctermfg=NONE        ctermbg=NONE        cterm=NONE
   hi TabLineSel         ctermfg=NONE        ctermbg=NONE        cterm=BOLD
-  hi MatchParen         ctermfg=61          ctermbg=255         cterm=NONE
+  hi MatchParen         ctermfg=0           ctermbg=6           cterm=NONE
   hi Pmenu              ctermfg=NONE        ctermbg=NONE        cterm=NONE
   hi PmenuSel           ctermfg=black       ctermbg=yellow      cterm=NONE
   hi Search             ctermfg=NONE        ctermbg=NONE        cterm=underline
@@ -85,7 +85,6 @@ hi Delimiter            ctermfg=7         ctermbg=NONE        cterm=NONE
 hi Operator             ctermfg=9         ctermbg=NONE        cterm=NONE
 
 hi Blue    ctermfg=4  cterm=none
-hi LightBlue ctermfg=12 cterm=none
 hi Green   ctermfg=2  cterm=none
 hi DarkGreen ctermfg=10 cterm=none
 hi Grey    ctermfg=13 cterm=none
