@@ -35,8 +35,8 @@ hi StatusLineNC         ctermfg=13          ctermbg=8           cterm=NONE
 
 hi Folded               ctermfg=13          ctermbg=NONE        cterm=NONE
 hi Title                ctermfg=NONE        ctermbg=NONE        cterm=NONE
-hi Visual               ctermfg=NONE        ctermbg=8           cterm=NONE
-hi VisualNOS            ctermfg=16          ctermbg=12          cterm=NONE
+hi Visual               ctermfg=0           ctermbg=4           cterm=NONE
+hi VisualNOS            ctermfg=7           ctermbg=8           cterm=NONE
 
 hi SpecialKey           ctermfg=NONE        ctermbg=NONE        cterm=NONE
 
