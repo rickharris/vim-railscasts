@@ -35,7 +35,7 @@ hi StatusLineNC         ctermfg=13          ctermbg=8           cterm=NONE
 
 hi Folded               ctermfg=13          ctermbg=NONE        cterm=NONE
 hi Title                ctermfg=NONE        ctermbg=NONE        cterm=NONE
-hi Visual               ctermfg=NONE        ctermbg=12          cterm=NONE
+hi Visual               ctermfg=NONE        ctermbg=8           cterm=NONE
 hi VisualNOS            ctermfg=16          ctermbg=12          cterm=NONE
 
 hi SpecialKey           ctermfg=NONE        ctermbg=NONE        cterm=NONE
@@ -65,11 +65,12 @@ if version >= 700 " Vim 7.x specific colors
 endif
 
 " Syntax highlighting
-hi Comment              ctermfg=13          ctermbg=NONE        cterm=NONE
+hi Comment              ctermfg=11          ctermbg=NONE        cterm=NONE
 hi String               ctermfg=2           ctermbg=NONE        cterm=NONE
 hi Number               ctermfg=2           ctermbg=NONE        cterm=NONE
 
 hi Keyword              ctermfg=9           ctermbg=NONE        cterm=NONE
+hi Statement            ctermfg=9           ctermbg=NONE        cterm=NONE
 hi PreProc              ctermfg=4           ctermbg=NONE        cterm=NONE
 
 hi Todo                 ctermfg=5           ctermbg=NONE        cterm=bold
@@ -84,19 +85,18 @@ hi Special              ctermfg=5         ctermbg=NONE        cterm=NONE
 hi Delimiter            ctermfg=7         ctermbg=NONE        cterm=NONE
 hi Operator             ctermfg=9         ctermbg=NONE        cterm=NONE
 
-hi Blue    ctermfg=4  cterm=none
-hi Green   ctermfg=2  cterm=none
+hi Blue      ctermfg=4  cterm=none
+hi Green     ctermfg=2  cterm=none
 hi DarkGreen ctermfg=10 cterm=none
-hi Grey    ctermfg=13 cterm=none
-hi Orange  ctermfg=9  cterm=none
-hi Red     ctermfg=1  cterm=none
-hi White   ctermfg=15 cterm=none
-hi Gold    ctermfg=3  cterm=none
-hi Purple  ctermfg=6  cterm=none
+hi Grey      ctermfg=13 cterm=none
+hi Orange    ctermfg=9  cterm=none
+hi Red       ctermfg=1  cterm=none
+hi White     ctermfg=15 cterm=none
+hi Gold      ctermfg=3  cterm=none
+hi Purple    ctermfg=6  cterm=none
 
 hi link Character       Constant
 hi link Conditional     Keyword
-hi link Statement       Keyword
 hi link Boolean         Constant
 hi link Float           Number
 hi link Repeat          Statement
