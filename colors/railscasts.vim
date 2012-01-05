@@ -4,12 +4,12 @@
 " ********************************************************************************
 " The following are the preferred 16 colors for your terminal
 "           Colors      Bright Colors
-" Black     #202020     #292929
+" Black     #202020     #606060
 " Red       #C72D2D     #B86329
 " Green     #87B047     #519F50
 " Yellow    #FFBE53     #BC9458
 " Blue      #5883A0     #2C313F
-" Magenta   #CC59B2     #606060
+" Magenta   #CC59B2     #292929
 " Cyan      #ABA8E2     #D5D4FF
 " White     #DAD4D2     #FFFFFF
 " ********************************************************************************
@@ -28,15 +28,15 @@ hi Normal               ctermfg=7           ctermbg=0           cterm=NONE
 hi NonText              ctermfg=0           ctermbg=NONE        cterm=NONE
 
 "hi Cursor               ctermfg=0           ctermbg=7           cterm=reverse
-hi LineNr               ctermfg=13          ctermbg=8           cterm=NONE
+hi LineNr               ctermfg=8           ctermbg=13          cterm=NONE
 hi VertSplit            ctermfg=13          ctermbg=NONE        cterm=NONE
-hi StatusLine           ctermfg=7           ctermbg=8           cterm=NONE
-hi StatusLineNC         ctermfg=13          ctermbg=8           cterm=NONE
+hi StatusLine           ctermfg=7           ctermbg=13          cterm=NONE
+hi StatusLineNC         ctermfg=8           ctermbg=13          cterm=NONE
 
 hi Folded               ctermfg=13          ctermbg=NONE        cterm=NONE
 hi Title                ctermfg=NONE        ctermbg=NONE        cterm=NONE
 hi Visual               ctermfg=0           ctermbg=4           cterm=NONE
-hi VisualNOS            ctermfg=7           ctermbg=8           cterm=NONE
+hi VisualNOS            ctermfg=7           ctermbg=13          cterm=NONE
 
 hi SpecialKey           ctermfg=NONE        ctermbg=NONE        cterm=NONE
 
@@ -52,10 +52,10 @@ hi WarningMsg           ctermfg=NONE        ctermbg=9          cterm=NONE
 hi ModeMsg              ctermfg=4           ctermbg=NONE        cterm=NONE
 
 if version >= 700 " Vim 7.x specific colors
-  hi CursorLine         ctermfg=NONE        ctermbg=8           cterm=NONE
+  hi CursorLine         ctermfg=NONE        ctermbg=13          cterm=NONE
   hi CursorColumn       ctermfg=NONE        ctermbg=NONE        cterm=NONE
-  hi ColorColumn        ctermfg=NONE        ctermbg=8           cterm=NONE
-  hi TabLine            ctermfg=13          ctermbg=NONE        cterm=NONE
+  hi ColorColumn        ctermfg=NONE        ctermbg=13          cterm=NONE
+  hi TabLine            ctermfg=8           ctermbg=NONE        cterm=NONE
   hi TabLineFill        ctermfg=NONE        ctermbg=NONE        cterm=NONE
   hi TabLineSel         ctermfg=NONE        ctermbg=NONE        cterm=BOLD
   hi MatchParen         ctermfg=0           ctermbg=6           cterm=NONE
