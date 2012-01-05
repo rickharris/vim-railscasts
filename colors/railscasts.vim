@@ -1,19 +1,5 @@
 " railscasts color scheme
 
-
-" ********************************************************************************
-" The following are the preferred 16 colors for your terminal
-"           Colors      Bright Colors
-" Black     #202020     #606060
-" Red       #C72D2D     #B86329
-" Green     #87B047     #519F50
-" Yellow    #FFBE53     #BC9458
-" Blue      #5883A0     #2C313F
-" Magenta   #CC59B2     #292929
-" Cyan      #ABA8E2     #D5D4FF
-" White     #DAD4D2     #FFFFFF
-" ********************************************************************************
-"
 set background=dark
 hi clear
 
@@ -23,77 +9,138 @@ endif
 
 let colors_name = "railscasts"
 
+function! s:translate_color(number)
+  let color_number = a:number
+  if color_number == 0
+    return '#202020'
+  endif
+  if color_number == 1
+    return '#C72D2D'
+  endif
+  if color_number == 2
+    return '#87B047'
+  endif
+  if color_number == 3
+    return '#FFBE53'
+  endif
+  if color_number == 4
+    return '#5883A0'
+  endif
+  if color_number == 5
+    return '#CC59B2'
+  endif
+  if color_number == 6
+    return '#ABA8E2'
+  endif
+  if color_number == 7
+    return '#DAD4D2'
+  endif
+  if color_number == 8
+    return '#292929'
+  endif
+  if color_number == 9
+    return '#B86329'
+  endif
+  if color_number == 10
+    return '#519F50'
+  endif
+  if color_number == 11
+    return '#BC9458'
+  endif
+  if color_number == 12
+    return '#2C313F'
+  endif
+  if color_number == 13
+    return '#606060'
+  endif
+  if color_number == 14
+    return '#D5D4FF'
+  endif
+  if color_number == 15
+    return '#FFFFFF'
+  endif
+endfunction
+function! s:highlight(group, fg, bg, attr)
+  exec "hi " . a:group . " guifg=" . s:translate_color(a:fg)
+  exec "hi " . a:group . " ctermfg=" . a:fg
+  exec "hi " . a:group . " guibg=" . s:translate_color(a:bg)
+  exec "hi " . a:group . " ctermbg=" . a:bg
+  exec "hi " . a:group . " gui=" . a:attr
+  exec "hi " . a:group . " cterm=" . a:attr
+endfunction
+
 " General colors
-hi Normal               ctermfg=7           ctermbg=0           cterm=NONE
-hi NonText              ctermfg=0           ctermbg=NONE        cterm=NONE
+" call s:highlight("Normal", 7, 0, "NONE")
+call s:highlight("Normal", 7, 0, "NONE")
+call s:highlight("NonText", 0, "NONE", "NONE")
 
-"hi Cursor               ctermfg=0           ctermbg=7           cterm=reverse
-hi LineNr               ctermfg=8           ctermbg=13          cterm=NONE
-hi VertSplit            ctermfg=13          ctermbg=NONE        cterm=NONE
-hi StatusLine           ctermfg=7           ctermbg=13          cterm=NONE
-hi StatusLineNC         ctermfg=8           ctermbg=13          cterm=NONE
+"call s:highlight("Cursor", 0, 7, "reverse")
+call s:highlight("LineNr", 13, 8, "NONE")
+call s:highlight("VertSplit", 13, "NONE", "NONE")
+call s:highlight("StatusLine", 7, 8, "NONE")
+call s:highlight("StatusLineNC", 13, 8, "NONE")
 
-hi Folded               ctermfg=13          ctermbg=NONE        cterm=NONE
-hi Title                ctermfg=NONE        ctermbg=NONE        cterm=NONE
-hi Visual               ctermfg=0           ctermbg=4           cterm=NONE
-hi VisualNOS            ctermfg=7           ctermbg=13          cterm=NONE
+call s:highlight("Folded", 13, "NONE", "NONE")
+call s:highlight("Title", "NONE", "NONE", "NONE")
+call s:highlight("Visual", 0, 4, "NONE")
+call s:highlight("VisualNOS", 7, 8, "NONE")
 
-hi SpecialKey           ctermfg=NONE        ctermbg=NONE        cterm=NONE
+call s:highlight("SpecialKey", "NONE", "NONE", "NONE")
 
-hi WildMenu             ctermfg=black       ctermbg=yellow      cterm=NONE
-hi PmenuSbar            ctermfg=black       ctermbg=white       cterm=NONE
-"hi Ignore              ctermfg=NONE        ctermbg=NONE        cterm=NONE
+call s:highlight("WildMenu", 0, 3, "NONE")
+call s:highlight("PmenuSbar", 0, 7, "NONE")
+"call s:highlight("Ignore", "NONE", "NONE", "NONE")
 
-hi Error                ctermfg=NONE        ctermbg=1           cterm=NONE
-hi ErrorMsg             ctermfg=NONE        ctermbg=1           cterm=NONE
-hi WarningMsg           ctermfg=NONE        ctermbg=9          cterm=NONE
+call s:highlight("Error", "NONE", 1, "NONE")
+call s:highlight("ErrorMsg", "NONE", 1, "NONE")
+call s:highlight("WarningMsg", "NONE", 9, "NONE")
 
 " Message displayed in lower left, such as --INSERT--
-hi ModeMsg              ctermfg=4           ctermbg=NONE        cterm=NONE
+call s:highlight("ModeMsg", 4, "NONE", "NONE")
 
 if version >= 700 " Vim 7.x specific colors
-  hi CursorLine         ctermfg=NONE        ctermbg=13          cterm=NONE
-  hi CursorColumn       ctermfg=NONE        ctermbg=NONE        cterm=NONE
-  hi ColorColumn        ctermfg=NONE        ctermbg=13          cterm=NONE
-  hi TabLine            ctermfg=8           ctermbg=NONE        cterm=NONE
-  hi TabLineFill        ctermfg=NONE        ctermbg=NONE        cterm=NONE
-  hi TabLineSel         ctermfg=NONE        ctermbg=NONE        cterm=BOLD
-  hi MatchParen         ctermfg=0           ctermbg=6           cterm=NONE
-  hi Pmenu              ctermfg=NONE        ctermbg=NONE        cterm=NONE
-  hi PmenuSel           ctermfg=black       ctermbg=yellow      cterm=NONE
-  hi Search             ctermfg=NONE        ctermbg=NONE        cterm=underline
+  call s:highlight("CursorLine", "NONE", 8, "NONE")
+  call s:highlight("CursorColumn", "NONE", "NONE", "NONE")
+  call s:highlight("ColorColumn", "NONE", 8, "NONE")
+  call s:highlight("TabLine", 13, "NONE", "NONE")
+  call s:highlight("TabLineFill", "NONE", "NONE", "NONE")
+  call s:highlight("TabLineSel", "NONE", "NONE", "BOLD")
+  call s:highlight("MatchParen", 0, 6, "NONE")
+  call s:highlight("Pmenu", "NONE", "NONE", "NONE")
+  call s:highlight("PmenuSel", 0, 3, "NONE")
+  call s:highlight("Search", "NONE", "NONE", "underline")
 endif
 
 " Syntax highlighting
-hi Comment              ctermfg=11          ctermbg=NONE        cterm=NONE
-hi String               ctermfg=2           ctermbg=NONE        cterm=NONE
-hi Number               ctermfg=2           ctermbg=NONE        cterm=NONE
+call s:highlight("Comment", 11, "NONE", "NONE")
+call s:highlight("String", 2, "NONE", "NONE")
+call s:highlight("Number", 2, "NONE", "NONE")
 
-hi Keyword              ctermfg=9           ctermbg=NONE        cterm=NONE
-hi Statement            ctermfg=9           ctermbg=NONE        cterm=NONE
-hi PreProc              ctermfg=4           ctermbg=NONE        cterm=NONE
+call s:highlight("Keyword", 9, "NONE", "NONE")
+call s:highlight("Statement", 9, "NONE", "NONE")
+call s:highlight("PreProc", 4, "NONE", "NONE")
 
-hi Todo                 ctermfg=5           ctermbg=NONE        cterm=bold
-hi Constant             ctermfg=4           ctermbg=NONE        cterm=NONE
+call s:highlight("Todo", 5, "NONE", "bold")
+call s:highlight("Constant", 4, "NONE", "NONE")
 
-hi Identifier           ctermfg=4           ctermbg=NONE        cterm=NONE
-hi Function             ctermfg=3           ctermbg=NONE        cterm=NONE
-hi Class                ctermfg=15          ctermbg=NONE        cterm=bold
-hi Type                 ctermfg=4           ctermbg=NONE        cterm=NONE
+call s:highlight("Identifier", 4, "NONE", "NONE")
+call s:highlight("Function", 3, "NONE", "NONE")
+call s:highlight("Class", 15, "NONE", "bold")
+call s:highlight("Type", 4, "NONE", "NONE")
 
-hi Special              ctermfg=5         ctermbg=NONE        cterm=NONE
-hi Delimiter            ctermfg=7         ctermbg=NONE        cterm=NONE
-hi Operator             ctermfg=9         ctermbg=NONE        cterm=NONE
+call s:highlight("Special", 5, "NONE", "NONE")
+call s:highlight("Delimiter", 7, "NONE", "NONE")
+call s:highlight("Operator", 9, "NONE", "NONE")
 
-hi Blue      ctermfg=4  cterm=none
-hi Green     ctermfg=2  cterm=none
-hi DarkGreen ctermfg=10 cterm=none
-hi Grey      ctermfg=13 cterm=none
-hi Orange    ctermfg=9  cterm=none
-hi Red       ctermfg=1  cterm=none
-hi White     ctermfg=15 cterm=none
-hi Gold      ctermfg=3  cterm=none
-hi Purple    ctermfg=6  cterm=none
+call s:highlight("Blue", 4, "NONE", "NONE")
+call s:highlight("Green", 2, "NONE", "NONE")
+call s:highlight("DarkGreen", 10, "NONE", "NONE")
+call s:highlight("Grey", 13, "NONE", "NONE")
+call s:highlight("Orange", 9, "NONE", "NONE")
+call s:highlight("Red", 1, "NONE", "NONE")
+call s:highlight("White", 15, "NONE", "NONE")
+call s:highlight("Gold", 3, "NONE", "NONE")
+call s:highlight("Purple", 6, "NONE", "NONE")
 
 hi link Character       Constant
 hi link Conditional     Keyword
