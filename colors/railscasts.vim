@@ -36,7 +36,7 @@ function! s:translate_color(number)
     return '#DAD4D2'
   endif
   if color_number == 8
-    return '#292929'
+    return '#606060'
   endif
   if color_number == 9
     return '#B86329'
@@ -51,7 +51,7 @@ function! s:translate_color(number)
     return '#2C313F'
   endif
   if color_number == 13
-    return '#606060'
+    return '#292929'
   endif
   if color_number == 14
     return '#D5D4FF'
@@ -70,20 +70,19 @@ function! s:highlight(group, fg, bg, attr)
 endfunction
 
 " General colors
-" call s:highlight("Normal", 7, 0, "NONE")
 call s:highlight("Normal", 7, 0, "NONE")
 call s:highlight("NonText", 0, "NONE", "NONE")
 
 "call s:highlight("Cursor", 0, 7, "reverse")
-call s:highlight("LineNr", 13, 8, "NONE")
-call s:highlight("VertSplit", 13, "NONE", "NONE")
-call s:highlight("StatusLine", 7, 8, "NONE")
-call s:highlight("StatusLineNC", 13, 8, "NONE")
+call s:highlight("LineNr", 8, 13, "NONE")
+call s:highlight("VertSplit", 8, "NONE", "NONE")
+call s:highlight("StatusLine", 7, 13, "NONE")
+call s:highlight("StatusLineNC", 8, 13, "NONE")
 
-call s:highlight("Folded", 13, "NONE", "NONE")
+call s:highlight("Folded", 8, "NONE", "NONE")
 call s:highlight("Title", "NONE", "NONE", "NONE")
 call s:highlight("Visual", 0, 4, "NONE")
-call s:highlight("VisualNOS", 7, 8, "NONE")
+call s:highlight("VisualNOS", 7, 13, "NONE")
 
 call s:highlight("SpecialKey", "NONE", "NONE", "NONE")
 
@@ -99,10 +98,10 @@ call s:highlight("WarningMsg", "NONE", 9, "NONE")
 call s:highlight("ModeMsg", 4, "NONE", "NONE")
 
 if version >= 700 " Vim 7.x specific colors
-  call s:highlight("CursorLine", "NONE", 8, "NONE")
+  call s:highlight("CursorLine", "NONE", 13, "NONE")
   call s:highlight("CursorColumn", "NONE", "NONE", "NONE")
-  call s:highlight("ColorColumn", "NONE", 8, "NONE")
-  call s:highlight("TabLine", 13, "NONE", "NONE")
+  call s:highlight("ColorColumn", "NONE", 13, "NONE")
+  call s:highlight("TabLine", 8, "NONE", "NONE")
   call s:highlight("TabLineFill", "NONE", "NONE", "NONE")
   call s:highlight("TabLineSel", "NONE", "NONE", "BOLD")
   call s:highlight("MatchParen", 0, 6, "NONE")
@@ -135,7 +134,7 @@ call s:highlight("Operator", 9, "NONE", "NONE")
 call s:highlight("Blue", 4, "NONE", "NONE")
 call s:highlight("Green", 2, "NONE", "NONE")
 call s:highlight("DarkGreen", 10, "NONE", "NONE")
-call s:highlight("Grey", 13, "NONE", "NONE")
+call s:highlight("Grey", 8, "NONE", "NONE")
 call s:highlight("Orange", 9, "NONE", "NONE")
 call s:highlight("Red", 1, "NONE", "NONE")
 call s:highlight("White", 15, "NONE", "NONE")
