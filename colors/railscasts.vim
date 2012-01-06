@@ -71,7 +71,8 @@ endfunction
 
 " General colors
 call s:highlight("Normal", 7, 0, "NONE")
-call s:highlight("NonText", 0, "NONE", "NONE")
+call s:highlight("NonText", 8, "NONE", "NONE")
+call s:highlight("SpecialKey", "NONE", 13, "NONE")
 
 "call s:highlight("Cursor", 0, 7, "reverse")
 call s:highlight("LineNr", 8, 13, "NONE")
@@ -83,8 +84,6 @@ call s:highlight("Folded", 8, "NONE", "NONE")
 call s:highlight("Title", "NONE", "NONE", "NONE")
 call s:highlight("Visual", 0, 4, "NONE")
 call s:highlight("VisualNOS", 7, 13, "NONE")
-
-call s:highlight("SpecialKey", "NONE", "NONE", "NONE")
 
 call s:highlight("WildMenu", 0, 3, "NONE")
 call s:highlight("PmenuSbar", 0, 7, "NONE")
