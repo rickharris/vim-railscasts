@@ -12,7 +12,7 @@ let colors_name = "railscasts"
 function! s:translate_color(number)
   let color_number = a:number
   if color_number == 0
-    return '#202020'
+    return '#1E1F29'
   endif
   if color_number == 1
     return '#C72D2D'
@@ -36,7 +36,7 @@ function! s:translate_color(number)
     return '#DAD4D2'
   endif
   if color_number == 8
-    return '#606060'
+    return '#404258'
   endif
   if color_number == 9
     return '#B86329'
@@ -51,7 +51,7 @@ function! s:translate_color(number)
     return '#2C313F'
   endif
   if color_number == 13
-    return '#292929'
+    return '#232430'
   endif
   if color_number == 14
     return '#D5D4FF'
@@ -82,8 +82,8 @@ call s:highlight("StatusLineNC", 8, 13, "NONE")
 
 call s:highlight("Folded", 8, "NONE", "NONE")
 call s:highlight("Title", "NONE", "NONE", "NONE")
-call s:highlight("Visual", 0, 4, "NONE")
-call s:highlight("VisualNOS", 7, 13, "NONE")
+call s:highlight("Visual", 7, 8, "NONE")
+call s:highlight("VisualNOS", 7, 8, "NONE")
 
 call s:highlight("WildMenu", 0, 3, "NONE")
 call s:highlight("PmenuSbar", 0, 7, "NONE")
@@ -97,16 +97,17 @@ call s:highlight("WarningMsg", "NONE", 9, "NONE")
 call s:highlight("ModeMsg", 4, "NONE", "NONE")
 
 if version >= 700 " Vim 7.x specific colors
-  call s:highlight("CursorLine", "NONE", 13, "NONE")
+  " For cursorline, if we set all the properties, things don't go well
+  exe "hi CursorLine guibg=".s:translate_color(13)."gui=none ctermbg=13 cterm=none"
+  exe "hi ColorColumn guibg=".s:translate_color(13)."gui=none ctermbg=13 cterm=none"
   call s:highlight("CursorColumn", "NONE", "NONE", "NONE")
-  call s:highlight("ColorColumn", "NONE", 13, "NONE")
   call s:highlight("TabLine", 8, "NONE", "NONE")
   call s:highlight("TabLineFill", "NONE", "NONE", "NONE")
   call s:highlight("TabLineSel", "NONE", "NONE", "BOLD")
   call s:highlight("MatchParen", 0, 6, "NONE")
   call s:highlight("Pmenu", "NONE", "NONE", "NONE")
   call s:highlight("PmenuSel", 0, 3, "NONE")
-  call s:highlight("Search", "NONE", "NONE", "underline")
+  call s:highlight("Search", 0, 2, "underline")
 endif
 
 " Syntax highlighting
@@ -258,3 +259,4 @@ hi link sassClass                   cssClassName
 hi link sassIdChar                  sassId
 hi link sassClassChar               sassClass
 hi link sassInclude                 Orange
+
